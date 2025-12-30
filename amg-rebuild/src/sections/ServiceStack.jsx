@@ -3,19 +3,19 @@ const serviceEntries = [
     id: "brickwork",
     title: "Brickwork packages",
     summary: "Facing brick, blockwork, and detail coursing delivered to programme.",
-    image: "/media/services/brickwork.jpg",
+    image: "/media/placeholders/service-generic.jpg",
   },
   {
     id: "masonry-supports",
     title: "Masonry supports",
     summary: "Lintels, restraint systems, and masonry supports coordinated with structure.",
-    image: "/media/services/masonry-supports.jpg",
+    image: "/media/placeholders/service-generic.jpg",
   },
   {
     id: "structural-works",
     title: "Structural works",
     summary: "Steel coordination, temporary works, and masonry alterations for live sites.",
-    image: "/media/services/structural-works.jpg",
+    image: "/media/placeholders/service-generic.jpg",
   },
 ];
 
