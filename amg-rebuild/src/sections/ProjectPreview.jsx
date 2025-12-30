@@ -3,25 +3,25 @@ const projectEntries = [
     id: "fleet-street",
     title: "Fleet Street Offices",
     location: "City of London",
-    image: "/media/placeholders/project-generic.jpg",
+    image: "/media/projects/fleet-street.jpg",
   },
   {
     id: "shoreditch-hotel",
     title: "Shoreditch Hotel Wing",
     location: "Shoreditch",
-    image: "/media/placeholders/project-generic.jpg",
+    image: "/media/projects/shoreditch-hotel.jpg",
   },
   {
     id: "canary-wharf",
     title: "Canary Wharf Retail Fit-out",
     location: "Canary Wharf",
-    image: "/media/placeholders/project-generic.jpg",
+    image: "/media/projects/canary-wharf.jpg",
   },
   {
     id: "kensington-school",
     title: "Kensington School Extension",
     location: "Kensington",
-    image: "/media/placeholders/project-generic.jpg",
+    image: "/media/projects/kensington-school.jpg",
   },
 ];
 
@@ -35,10 +35,15 @@ function ProjectPreview() {
 
         <div className="project-preview__grid">
           {projectEntries.map((project) => (
-            <article key={project.id} className="project-preview__card">
-              <div className="project-preview__media" aria-hidden="true">
-                <img src={project.image} alt="" />
-              </div>
+              <article key={project.id} className="project-preview__card">
+                <div className="project-preview__media" aria-hidden="true">
+                  <img
+                    src={project.image}
+                    alt={`${project.title} in ${project.location}`}
+                    width="1200"
+                    height="800"
+                  />
+                </div>
               <div className="project-preview__content">
                 <h3 className="project-preview__title">{project.title}</h3>
                 <p className="project-preview__location">{project.location}</p>

@@ -21,7 +21,12 @@ function HeroIntro() {
         </div>
 
         <div className="hero-intro__image">
-          <img src="/media/placeholders/hero-wide.jpg" alt="AMG London project overview" />
+          <img
+            src="/media/placeholders/hero-wide.jpg"
+            alt="AMG London project hero image"
+            width="1600"
+            height="900"
+          />
         </div>
       </div>
     </section>
