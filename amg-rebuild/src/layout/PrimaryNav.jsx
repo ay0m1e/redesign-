@@ -4,7 +4,10 @@ const navigationLinks = [
   { id: "home", label: "Home" },
   { id: "services", label: "Services" },
   { id: "projects", label: "Projects" },
+  { id: "prefixing", label: "Pre-Fixing" },
+  { id: "construction", label: "Construction" },
   { id: "about", label: "About" },
+  { id: "news", label: "News" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -26,13 +29,18 @@ function PrimaryNav() {
           className="navigation-toggle"
           aria-expanded={menuOpen}
           aria-label="Toggle navigation"
+          aria-controls="primary-navigation"
           onClick={handleToggle}
         >
           <span className="navigation-toggle__bar" />
           <span className="navigation-toggle__bar" />
           <span className="navigation-toggle__bar" />
         </button>
-        <nav aria-label="Primary" className={`primary-nav ${menuOpen ? "is-open" : ""}`}>
+        <nav
+          id="primary-navigation"
+          aria-label="Primary"
+          className={`primary-nav ${menuOpen ? "is-open" : ""}`}
+        >
           <ul className="site-navigation">
             {navigationLinks.map((navigationLink) => (
               <li key={navigationLink.id} className="navigation-item">
