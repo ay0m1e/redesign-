@@ -13,7 +13,7 @@
 
 body {
   margin: 0;
-  font-family: var(--font-family-sans);
+  font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: var(--text-size-base);
   font-weight: var(--text-weight-regular);
   line-height: var(--line-height-base);
@@ -21,6 +21,28 @@ body {
   background-color: var(--surface-page);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 var(--space-sm);
+  font-weight: var(--text-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: var(--text-size-title);
+}
+
+h2 {
+  font-size: var(--text-size-heading);
+}
+
+h3 {
+  font-size: 1.15rem;
 }
 
 a {
@@ -70,6 +92,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
+  overflow: visible;
 }
 
 .site-header__inner {
@@ -77,7 +100,8 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-lg);
-  padding: var(--space-md) 0;
+  padding: var(--space-md) var(--space-xl);
+  position: relative;
 }
 
 .brand-mark {
@@ -87,15 +111,50 @@ img {
   font-weight: var(--text-weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.primary-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--accent-amber);
+  border-top: 1px solid var(--accent-amber-strong);
+  padding: var(--space-sm) var(--space-xl);
+  display: none;
+}
+
+.primary-nav.is-open {
+  display: block;
 }
 
 .site-navigation {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-md);
+  display: grid;
+  align-items: flex-start;
+  gap: var(--space-sm);
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.navigation-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: var(--space-xs);
+  background-color: transparent;
+  border: 1px solid currentColor;
+  border-radius: 0;
+  color: currentColor;
+}
+
+.navigation-toggle__bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: currentColor;
 }
 
 .navigation-link {
@@ -374,6 +433,28 @@ img {
 
   .project-preview__grid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .primary-nav {
+    position: static;
+    padding: 0;
+    border-top: 0;
+    display: block;
+    background-color: transparent;
+  }
+
+  .primary-nav.is-open {
+    display: block;
+  }
+
+  .site-navigation {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .navigation-toggle {
+    display: none;
   }
 }
 
