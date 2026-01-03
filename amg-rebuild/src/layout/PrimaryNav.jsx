@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const navigationLinks = [
   { id: "home", label: "Home" },
@@ -11,8 +12,15 @@ const navigationLinks = [
   { id: "contact", label: "Contact" },
 ];
 
-function PrimaryNav() {
+function PrimaryNav({ onNavigate, activePage }) {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleSelect = (target) => {
+    if (onNavigate) {
+      onNavigate(target);
+    }
+    setMenuOpen(false);
+  };
 
   const handleToggle = () => {
     setMenuOpen((current) => !current);
@@ -44,9 +52,13 @@ function PrimaryNav() {
           <ul className="site-navigation">
             {navigationLinks.map((navigationLink) => (
               <li key={navigationLink.id} className="navigation-item">
-                <a className="navigation-link" href="#">
+                <button
+                  type="button"
+                  className={`navigation-link${activePage === navigationLink.id ? " is-active" : ""}`}
+                  onClick={() => handleSelect(navigationLink.id)}
+                >
                   {navigationLink.label}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
@@ -55,5 +67,10 @@ function PrimaryNav() {
     </header>
   );
 }
+
+PrimaryNav.propTypes = {
+  onNavigate: PropTypes.func,
+  activePage: PropTypes.string,
+};
 
 export default PrimaryNav;

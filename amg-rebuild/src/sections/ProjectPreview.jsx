@@ -17,12 +17,6 @@ const projectEntries = [
     location: "Canary Wharf",
     image: "/media/placeholders/project-generic.jpg",
   },
-  {
-    id: "kensington-school",
-    title: "Kensington School Extension",
-    location: "Kensington",
-    image: "/media/placeholders/project-generic.jpg",
-  },
 ];
 
 function ProjectPreview() {
@@ -30,7 +24,10 @@ function ProjectPreview() {
     <section className="project-preview">
       <div className="content-boundary project-preview__inner">
         <header className="project-preview__header">
-          <h2 className="project-preview__heading">Projects</h2>
+          <h2 className="project-preview__heading">SELECTED PROJECTS</h2>
+          <p className="project-preview__lede">
+            Built assets across London’s commercial, hospitality, and education sectors.
+          </p>
         </header>
 
         <div className="project-preview__grid">

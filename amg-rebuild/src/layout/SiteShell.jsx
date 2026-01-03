@@ -1,9 +1,9 @@
 import PrimaryNav from "./PrimaryNav.jsx";
 
-function SiteShell({ children }) {
+function SiteShell({ children, onNavigate, activePage }) {
   return (
     <div className="site-shell">
-      <PrimaryNav />
+      <PrimaryNav onNavigate={onNavigate} activePage={activePage} />
 
       <main className="site-main">{children}</main>
 

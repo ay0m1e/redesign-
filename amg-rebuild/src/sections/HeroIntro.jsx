@@ -1,33 +1,10 @@
-const serviceLines = [
-  "Commercial fit-out",
-  "Refurbishment",
-  "Structural works",
-];
-
 function HeroIntro() {
   return (
     <section className="hero-intro">
-      <div className="content-boundary hero-intro__layout">
-        <div className="hero-intro__text-panel">
-          <div className="hero-intro__divider" aria-hidden="true" />
-          <ul className="hero-intro__services" aria-label="Core services">
-            {serviceLines.map((service) => (
-              <li key={service} className="hero-intro__service">
-                {service}
-              </li>
-            ))}
-          </ul>
-          <div className="hero-intro__divider" aria-hidden="true" />
-        </div>
-
-        <div className="hero-intro__image">
-          <img
-            src="/media/placeholders/hero-wide.jpg"
-            alt="AMG London project hero image"
-            width="1600"
-            height="900"
-          />
-        </div>
+      <div className="hero-intro__overlay" aria-hidden="true" />
+      <div className="content-boundary hero-intro__content">
+        <h1 className="hero-intro__headline">AMG LONDON LTD</h1>
+        <p className="hero-intro__subline">STRUCTURAL AND FAÇADE CONTRACTOR DELIVERING LONDON PROJECTS</p>
       </div>
     </section>
   );
