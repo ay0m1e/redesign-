@@ -3,19 +3,19 @@ const projectEntries = [
     id: "fleet-street",
     title: "Fleet Street Offices",
     location: "City of London",
-    image: "/media/placeholders/project-generic.jpg",
+    image: "/media/construction/project-01.jpg",
   },
   {
     id: "shoreditch-hotel",
     title: "Shoreditch Hotel Wing",
     location: "Shoreditch",
-    image: "/media/placeholders/project-generic.jpg",
+    image: "/media/construction/project-02.jpg",
   },
   {
     id: "canary-wharf",
     title: "Canary Wharf Retail Fit-out",
     location: "Canary Wharf",
-    image: "/media/placeholders/project-generic.jpg",
+    image: "/media/construction/project-03.jpg",
   },
 ];
 

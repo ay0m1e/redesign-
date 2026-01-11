@@ -6,7 +6,6 @@ const navigationLinks = [
   { id: "services", label: "Services" },
   { id: "projects", label: "Projects" },
   { id: "prefixing", label: "Pre-Fixing" },
-  { id: "construction", label: "Construction" },
   { id: "about", label: "About" },
   { id: "news", label: "News" },
   { id: "contact", label: "Contact" },

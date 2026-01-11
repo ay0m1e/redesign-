@@ -5,7 +5,6 @@ import About from "./pages/About.jsx";
 import Services from "./pages/Services.jsx";
 import Projects from "./pages/Projects.jsx";
 import PreFixing from "./pages/PreFixing.jsx";
-import Construction from "./pages/Construction.jsx";
 import News from "./pages/News.jsx";
 import Contact from "./pages/Contact.jsx";
 
@@ -14,7 +13,7 @@ const pageMap = {
   services: Services,
   projects: Projects,
   prefixing: PreFixing,
-  construction: Construction,
+  construction: Projects,
   about: About,
   news: News,
   contact: Contact,
@@ -23,6 +22,7 @@ const pageMap = {
 function App() {
   const [activePage, setActivePage] = useState("home");
   const ActivePageComponent = pageMap[activePage] || Home;
+  const navigationPage = activePage === "construction" ? "projects" : activePage;
 
   const handleNavigate = (pageId) => {
     setActivePage(pageId);
@@ -30,7 +30,7 @@ function App() {
   };
 
   return (
-    <SiteShell onNavigate={handleNavigate} activePage={activePage}>
+    <SiteShell onNavigate={handleNavigate} activePage={navigationPage}>
       <ActivePageComponent />
     </SiteShell>
   );

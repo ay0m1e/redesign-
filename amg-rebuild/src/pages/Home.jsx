@@ -1,4 +1,5 @@
 import HeroIntro from "../sections/HeroIntro.jsx";
+import ConstructionGallery from "../sections/ConstructionGallery.jsx";
 import AboutIntro from "../sections/AboutIntro.jsx";
 import ServiceStack from "../sections/ServiceStack.jsx";
 import ProjectPreview from "../sections/ProjectPreview.jsx";
@@ -7,6 +8,7 @@ function Home() {
   return (
     <>
       <HeroIntro />
+      <ConstructionGallery />
       <AboutIntro />
       <ServiceStack />
       <ProjectPreview />
