@@ -14,7 +14,7 @@ function PreFixing() {
 
       <figure className="page-figure page-figure--lead">
         <img
-          src="/media/construction/prefixing-01.jpg"
+          src="/media/project5.jpg"
           alt="AMG London pre-fixing works"
           width="1600"
           height="900"
@@ -47,7 +47,7 @@ function PreFixing() {
 
       <figure className="page-figure">
         <img
-          src="/media/construction/prefixing-02.jpg"
+          src="/media/project10.jpg"
           alt="Pre-fixing installation stage"
           width="1400"
           height="800"

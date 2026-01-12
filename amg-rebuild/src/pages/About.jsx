@@ -20,7 +20,7 @@ function About() {
 
       <figure className="page-figure page-figure--lead">
         <img
-          src="/media/placeholders/hero-wide.jpg"
+          src="/media/project4.jpg"
           alt="AMG London masonry and façade delivery"
           width="1600"
           height="900"
@@ -67,7 +67,7 @@ function About() {
 
       <figure className="page-figure">
         <img
-          src="/media/placeholders/service-generic.jpg"
+          src="/media/project8.jpg"
           alt="AMG London service capability"
           width="1400"
           height="800"
@@ -104,7 +104,7 @@ function About() {
           </p>
           <figure className="page-figure page-figure--compact">
             <img
-              src="/media/placeholders/project-generic.jpg"
+              src="/media/project9.jpg"
               alt="AMG London project delivery"
               width="1200"
               height="700"

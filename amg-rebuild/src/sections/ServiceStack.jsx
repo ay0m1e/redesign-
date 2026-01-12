@@ -3,25 +3,25 @@ const serviceEntries = [
     id: "brickwork",
     title: "Brickwork delivery",
     summary: "Structural brick, block, and facing work sequenced for live sites.",
-    image: "/media/construction/brickwork-01.jpg",
+    image: "/media/mansonry.jpg",
   },
   {
     id: "masonry-supports",
     title: "Masonry supports",
     summary: "Lintels, restraints, and carrier systems coordinated with structure.",
-    image: "/media/construction/masonry-supports-01.jpg",
+    image: "/media/windposts.jpg",
   },
   {
     id: "structural-works",
     title: "Structural works",
     summary: "Builder’s works, temporary works, and steel interfaces managed on programme.",
-    image: "/media/construction/structural-works-01.jpg",
+    image: "/media/rope.jpg",
   },
   {
     id: "facade-packages",
     title: "Façade packages",
     summary: "Brick slips, rainscreen, and façade coordination aligned to consultant details.",
-    image: "/media/construction/facade-01.jpg",
+    image: "/media/brick_slips.jpg",
   },
 ];
 
