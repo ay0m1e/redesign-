@@ -4,7 +4,13 @@ import AboutIntro from "../sections/AboutIntro.jsx";
 import ServiceStack from "../sections/ServiceStack.jsx";
 import ProjectPreview from "../sections/ProjectPreview.jsx";
 
-function Home() {
+function Home({ onNavigate }) {
+  const handleContactClick = () => {
+    if (onNavigate) {
+      onNavigate("contact");
+    }
+  };
+
   return (
     <>
       <HeroIntro />
@@ -13,19 +19,25 @@ function Home() {
       <ServiceStack />
       <ProjectPreview />
       <div className="home-view">
-        <section className="contact-section" id="contact">
+        <section className="home-contact" id="contact">
           <div className="content-boundary">
-            <div className="contact-panel">
-              <h2 className="contact-title">Let's build together</h2>
-              <p className="contact-copy">Share your programme and scope; we will return a clear plan.</p>
-              <div className="contact-links">
-                <a className="action-primary" href="mailto:hello@amglondon.co.uk">
-                  Email the team
+            <div className="home-contact__inner">
+              <h2 className="home-contact__title">Get in Touch</h2>
+              <p className="home-contact__copy">
+                For project enquiries, tender discussions, or general questions, contact AMG London using the details
+                below or visit our Contact page.
+              </p>
+              <div className="home-contact__details">
+                <a className="home-contact__link" href="tel:+442085919253">
+                  +44 020 8591 9253
                 </a>
-                <a className="contact-link" href="tel:+442071234567">
-                  <span>+44 (0)20 7123 4567</span>
+                <a className="home-contact__link" href="mailto:amg.london.ltd@gmail.com">
+                  amg.london.ltd@gmail.com
                 </a>
               </div>
+              <button className="home-contact__cta" type="button" onClick={handleContactClick}>
+                Contact AMG London
+              </button>
             </div>
           </div>
         </section>

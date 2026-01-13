@@ -31,7 +31,7 @@ function App() {
 
   return (
     <SiteShell onNavigate={handleNavigate} activePage={navigationPage}>
-      <ActivePageComponent />
+      <ActivePageComponent onNavigate={handleNavigate} />
     </SiteShell>
   );
 }
