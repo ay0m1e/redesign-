@@ -1,27 +1,33 @@
+import { Link } from "react-router-dom";
+
 const serviceEntries = [
   {
     id: "brickwork",
     title: "Brickwork delivery",
     summary: "Structural brick, block, and facing work sequenced for live sites.",
     image: "/media/mansonry.jpg",
+    path: "/services/structural-brickwork-masonry",
   },
   {
     id: "masonry-supports",
     title: "Masonry supports",
     summary: "Lintels, restraints, and carrier systems coordinated with structure.",
     image: "/media/windposts.jpg",
+    path: "/services/masonry-support-systems-windposts",
   },
   {
     id: "structural-works",
     title: "Structural works",
     summary: "Builder’s works, temporary works, and steel interfaces managed on programme.",
     image: "/media/rope.jpg",
+    path: "/services/on-site-installation-delivery",
   },
   {
     id: "facade-packages",
     title: "Façade packages",
     summary: "Brick slips, rainscreen, and façade coordination aligned to consultant details.",
     image: "/media/brick_slips.jpg",
+    path: "/pre-fixing",
   },
 ];
 
@@ -51,6 +57,9 @@ function ServiceStack() {
               <div className="service-stack__content">
                 <h3 className="service-stack__title">{service.title}</h3>
                 <p className="service-stack__summary">{service.summary}</p>
+                <Link className="service-stack__link" to={service.path}>
+                  Read more
+                </Link>
               </div>
             </article>
           ))}

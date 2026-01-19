@@ -1,38 +1,61 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import SiteShell from "./layout/SiteShell.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Services from "./pages/Services.jsx";
 import Projects from "./pages/Projects.jsx";
 import PreFixing from "./pages/PreFixing.jsx";
+import StructuralBrickworkMasonry from "./pages/StructuralBrickworkMasonry.jsx";
+import MasonrySupportSystemsWindposts from "./pages/MasonrySupportSystemsWindposts.jsx";
+import MasonryReinforcementAccessories from "./pages/MasonryReinforcementAccessories.jsx";
+import OnSiteInstallationDelivery from "./pages/OnSiteInstallationDelivery.jsx";
 import News from "./pages/News.jsx";
 import Contact from "./pages/Contact.jsx";
 
-const pageMap = {
-  home: Home,
-  services: Services,
-  projects: Projects,
-  prefixing: PreFixing,
-  construction: Projects,
-  about: About,
-  news: News,
-  contact: Contact,
-};
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
-  const [activePage, setActivePage] = useState("home");
-  const ActivePageComponent = pageMap[activePage] || Home;
-  const navigationPage = activePage === "construction" ? "projects" : activePage;
-
-  const handleNavigate = (pageId) => {
-    setActivePage(pageId);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <SiteShell onNavigate={handleNavigate} activePage={navigationPage}>
-      <ActivePageComponent onNavigate={handleNavigate} />
-    </SiteShell>
+    <BrowserRouter>
+      <ScrollToTop />
+      <SiteShell>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route
+            path="/services/structural-brickwork-masonry"
+            element={<StructuralBrickworkMasonry />}
+          />
+          <Route
+            path="/services/masonry-support-systems-windposts"
+            element={<MasonrySupportSystemsWindposts />}
+          />
+          <Route path="/pre-fixing" element={<PreFixing />} />
+          <Route
+            path="/services/masonry-reinforcement-accessories"
+            element={<MasonryReinforcementAccessories />}
+          />
+          <Route
+            path="/services/on-site-installation-delivery"
+            element={<OnSiteInstallationDelivery />}
+          />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </SiteShell>
+    </BrowserRouter>
   );
 }
 

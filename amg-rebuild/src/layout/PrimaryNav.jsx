@@ -1,23 +1,20 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
 const navigationLinks = [
-  { id: "home", label: "Home" },
-  { id: "services", label: "Services" },
-  { id: "projects", label: "Projects" },
-  { id: "prefixing", label: "Pre-Fixing" },
-  { id: "about", label: "About" },
-  { id: "news", label: "News" },
-  { id: "contact", label: "Contact" },
+  { id: "home", label: "Home", path: "/", end: true },
+  { id: "services", label: "Services", path: "/services" },
+  { id: "projects", label: "Projects", path: "/projects" },
+  { id: "prefixing", label: "Pre-Fixing", path: "/pre-fixing" },
+  { id: "about", label: "About", path: "/about" },
+  { id: "news", label: "News", path: "/news" },
+  { id: "contact", label: "Contact", path: "/contact" },
 ];
 
-function PrimaryNav({ onNavigate, activePage }) {
+function PrimaryNav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleSelect = (target) => {
-    if (onNavigate) {
-      onNavigate(target);
-    }
+  const handleSelect = () => {
     setMenuOpen(false);
   };
 
@@ -51,13 +48,14 @@ function PrimaryNav({ onNavigate, activePage }) {
           <ul className="site-navigation">
             {navigationLinks.map((navigationLink) => (
               <li key={navigationLink.id} className="navigation-item">
-                <button
-                  type="button"
-                  className={`navigation-link${activePage === navigationLink.id ? " is-active" : ""}`}
-                  onClick={() => handleSelect(navigationLink.id)}
+                <NavLink
+                  to={navigationLink.path}
+                  end={navigationLink.end}
+                  className={({ isActive }) => `navigation-link${isActive ? " is-active" : ""}`}
+                  onClick={handleSelect}
                 >
                   {navigationLink.label}
-                </button>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -66,10 +64,5 @@ function PrimaryNav({ onNavigate, activePage }) {
     </header>
   );
 }
-
-PrimaryNav.propTypes = {
-  onNavigate: PropTypes.func,
-  activePage: PropTypes.string,
-};
 
 export default PrimaryNav;

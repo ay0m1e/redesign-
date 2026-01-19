@@ -1,16 +1,11 @@
+import { Link } from "react-router-dom";
 import HeroIntro from "../sections/HeroIntro.jsx";
 import ConstructionGallery from "../sections/ConstructionGallery.jsx";
 import AboutIntro from "../sections/AboutIntro.jsx";
 import ServiceStack from "../sections/ServiceStack.jsx";
 import ProjectPreview from "../sections/ProjectPreview.jsx";
 
-function Home({ onNavigate }) {
-  const handleContactClick = () => {
-    if (onNavigate) {
-      onNavigate("contact");
-    }
-  };
-
+function Home() {
   return (
     <>
       <HeroIntro />
@@ -35,9 +30,9 @@ function Home({ onNavigate }) {
                   amg.london.ltd@gmail.com
                 </a>
               </div>
-              <button className="home-contact__cta" type="button" onClick={handleContactClick}>
+              <Link className="home-contact__cta" to="/contact">
                 Contact AMG London
-              </button>
+              </Link>
             </div>
           </div>
         </section>
